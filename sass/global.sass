@@ -1,0 +1,480 @@
+@font-face
+	src: url('../fonts/Acrom.otf')
+	font-family: 'Acrom'
+$c1: #000
+$c2: #fff
+$fz: 16px
+$ff: 'Acrom', sans-serif
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $fz $ff
+	color: $c1
+	background: $c2
+	box-sizing: border-box
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show
+	display: block
+
+meta, script, style, .hidden
+	display: none
+
+.h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6
+	font-weight: normal
+
+.h1, h1
+	font-size: 24px
+.h2, h2
+	font-size: 20px
+.h3, h3
+	font-size: 16px
+.h4, h4
+	font-size: 14px
+.h5, h5
+	font-size: 12px
+.h6, h6
+	font-size: 10px
+
+
+
+a
+	color: $c1
+	text-decoration: none
+
+button, input[type="submit"]
+	cursor: pointer
+
+button, input, textarea
+	display: block
+	outline: none
+	border: none
+	background: none
+	font-family: $ff
+	box-sizing: border-box
+
+input[name="name"]
+	text-transform: capitalize
+
+textarea
+	resize: none
+
+ul, ol
+	margin: 5px 0 5px 20px
+
+
+::placeholder
+	color: gray
+
+
+.tal
+	text-align: left
+
+.tac
+	text-align: center
+
+.tar
+	text-align: right
+
+
+i.icon
+	display: inline-block
+
+
+.i, i
+	font-style: italic
+
+.b, b, strong
+	font-weight: bold
+
+.btn, button
+	display: block
+	text-align: center
+	cursor: pointer
+
+.container
+	position: relative
+	max-width: 1620px
+	margin: 0 auto
+	padding-left: 15px
+	padding-right: 15px
+
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.w0
+	.a1
+		width: 8.33333333%
+	.a2
+		width: 16.66666667%
+	.a3
+		width: 25%
+	.a4
+		width: 33.33333333%
+	.a5
+		width: 41.66666667%
+	.a6
+		width: 50%
+	.a7
+		width: 58.33333333%
+	.a8
+		width: 66.66666667%
+	.a9
+		width: 75%
+	.a10
+		width: 83.33333333%
+	.a11
+		width: 91.66666667%
+	.a12
+		width: 100%
+
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+
+
+.col
+	display: block
+	float: left
+	min-height: 1px
+
+.breadcrumbs
+	list-style: none
+	li
+		display: inline
+		&:after
+			position: relative
+			display: inline-block
+			content: '/'
+			margin-right: 0
+			margin-left: 3px
+		&:last-of-type
+			&:after
+				display: none
+
+.caret
+	li
+		list-style: none
+	a
+		cursor: pointer
+	ul
+		display: none
+		
+
+.breadcrumbs, .caret
+	margin-left: 0
+
+.btn
+	position: relative
+	padding: 8px 0px 12px
+	background: url('../img/btn.jpg')
+	box-sizing: border-box
+	font-size: 16.67px
+	width: 130px
+	margin-left: auto
+	margin-right: auto
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75)
+	i
+		display: inline-block
+		content: ''
+		background: url('../img/arrow-black.png')
+		width: 6px
+		height: 9px
+		margin-left: 7px
+	&:hover
+		background: url('../img/btn-invert.jpg')
+		color: $c2
+		i
+			background: url('../img/arrow-blue.png')
+	&.invert
+		background: url('../img/btn-invert.jpg')
+		color: $c2
+		i
+			background: url('../img/arrow-blue.png')
+		&:hover
+			background: gray
+
+
+	
+
+button#sticks
+	display: none
+	width: 40px
+	height: 40px
+	float: right
+	margin-top: 30px
+	span
+		display: block
+		position: relative
+		width: 35px
+		height: 4px
+		background: $c2	
+		margin-left: auto
+		margin-right: auto
+		transition: .5s
+		&:nth-of-type(2)
+			margin: 6px auto
+button#sticks.close
+	span
+		&:nth-of-type(1)
+			transform: rotate(135deg)
+		&:nth-of-type(2)
+			display: none
+		&:nth-of-type(3)
+			margin-top: -4px
+			transform: rotate(-135deg)
+
+
+.slick-arrow
+	z-index: 10000
+	width: 50px
+	height: 50px
+	top: 51%
+	&.slick-prev
+		left: 25px
+	&.slick-next
+		right: 25px
+	&:before
+		display: none
+
+#popup
+	display: none
+	z-index: 1000
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	height: 100%
+	background: rgba(0,0,0,.5)
+	.container
+		width: 400px
+		padding: 20px
+		background: $c2
+		.title
+			display: block
+			text-align: center
+			margin-bottom: 20px
+			font-size: 28px
+		.message
+			display: none
+		.close
+			position: absolute
+			top: -20px
+			right: -20px
+
+#header
+	background: #253657
+	.left
+		width: 363px
+		*
+			display: block
+	.tel
+		color: $c2
+		font-size: 21px
+		text-align: right
+		position: relative
+		margin-top: -20px
+		margin-bottom: 7px
+	.nav
+		float: right
+		padding-top: 52px
+		// padding-bottom: 48px
+		a
+			color: $c2
+			margin-right: 40px
+			padding-bottom: 10px
+			font-size: 25px
+			&:hover
+				border-bottom: 2px solid $c2
+#main
+	max-width: 1600px
+	margin: 0 auto
+#slider
+	// min-height: 460px
+	// background: #253657
+	img
+		display: block
+		width: 100%
+#services
+	background: url('../img/bg.jpg') no-repeat top center
+	color: $c2
+	text-align: center
+	padding-bottom: 63px
+	.col
+		padding-right: 10px
+		padding-left: 10px
+		box-sizing: border-box
+	h3
+		font-size: 21px
+		margin-top: 76px 
+	span
+		display: block
+		margin-top: 15px
+		font-size: 12.5px
+	figure
+		height: 143px
+	img
+		display: block
+		margin: 22px auto 30px
+	.btn
+		margin-top: 15px
+.banner
+	text-align: center
+	font-size: 25px
+	img
+		display: block
+		width: 100%
+	.col
+		&:nth-of-type(1)
+			background: #E9E9E9
+
+#shop
+	padding-top: 70px
+	padding-bottom: 80px
+	background: #253657
+	text-align: center
+	span
+		color: $c2
+	img
+		position: relative
+		margin: -110px auto -155px
+		max-width: 100%
+		left: -5px
+
+#restoration
+	text-align: right
+	padding-bottom: 96px
+	.container
+		max-width: 1400px
+	img
+		position: relative
+		display: block
+		margin: 90px auto -150px
+		right: 210px
+	h3
+		font-size: 21px
+		margin-bottom: 25px
+	span
+		display: block
+		font-size: 17px
+		margin-bottom: 25px
+	.btn
+		margin-right: 0
+#auto
+	background: #777777
+	padding-top: 240px
+	text-align: right
+	color: $c2
+	padding-bottom: 132px 
+	.container
+		max-width: 1400px
+	h3
+		font-size: 21px
+		margin-bottom: 25px
+		margin-top: -130px
+	.btn
+		margin-right: 0
+		margin-top: 25px
+#icons
+	background: url('../img/bg2.jpg') no-repeat top center
+	min-height: 312px
+	text-align: center
+	padding-top: 43.31px
+	padding-bottom: 43.31px
+	box-sizing: border-box
+	.container
+		padding-right: 50px
+		padding-left: 50px
+	span
+		color: $c2
+		text-align: center
+		font-size: 25px
+	img
+		display: block
+		bottom: 0
+		margin: 0 auto
+	figure
+		height: 150px
+		position: relative
+		margin-bottom: 44px
+		box-sizing: border-box
+		&.id1
+			img
+				padding-top: 39px
+		&.id2
+			img
+				padding-top: 50px
+		&.id3
+			img
+				padding-top: 1px
+	.col
+		box-sizing: border-box
+		&:nth-of-type(1)
+			padding-left: 50px
+		&:nth-of-type(2)
+			padding-left: 10px
+			img
+				position: relative
+				left: 7px
+		&:nth-of-type(3)
+			padding-right: 50px
+		&:nth-of-type(4)
+			padding-right: 50px
+#footer
+	background: #525252
+	color: $c2
+	padding-top: 60px
+	padding-bottom: 60px
+	min-height: 520px
+	box-sizing: border-box
+	a	
+		color: $c2
+	ul
+		margin-left: 170px
+		li
+			list-style: none
+			margin-bottom: 7px
+	.text
+		width: 450px
+		margin-left: 100px
+	.podpiska
+		float: right
+		padding-top: 80px
+		margin-right: 65px
+		span, input, .btn
+			float: left
+		span
+			line-height: 40px
+			margin-right: 15px
+		input
+			width: 253px
+			height: 40px
+			padding: 0 15px
+			background: #6C6C6C
+			border-left: 1px solid $c1
+			margin-right: 15px
+			font-size: 12.5px
+			font-style: italic
+			color: $c2
+		::placeholder
+			color: #c2c2c2
+	.copy
+		margin-top: 110px
+		text-align: center
